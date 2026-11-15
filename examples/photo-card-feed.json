@@ -1,0 +1,11 @@
+{
+  "_comment": "Design 3, photo card for a keynote speaker. Text here is placeholder text. GRADE #eddcc2 warms a portrait.",
+  "PHOTO": "../assets/placeholders/portrait.jpg",
+  "PHOTO_POSITION": "50% 20%",
+  "GRADE": "#eddcc2",
+  "PILL": "Keynote speaker",
+  "TITLE_LINE_1": "Firstname", "TITLE_LINE_2": "Lastname",
+  "SUB_LINE_1": "Role title", "SUB_LINE_2": "Institution name",
+  "BAR_NUM": "4–5", "BAR_MONTH": "DEC", "BAR_DAYS": "Fri–Sat",
+  "BAR_LINE_1": "Event name 2027", "BAR_LINE_2": "City, Country"
+}

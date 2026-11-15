@@ -1,0 +1,10 @@
+{
+  "_comment": "Design 2, ticket post. Text here is placeholder text.",
+  "PHOTO": "../assets/placeholders/photo-room.jpg",
+  "PHOTO_POSITION": "50% 40%",
+  "TICKET_LINE_1": "Posljednja", "TICKET_LINE_2": "mjesta", "STUB_TEXT": "GALA 2027",
+  "TITLE": "Naziv događaja",
+  "BAR_DAY": "1.", "BAR_MONTH": "MJESECA", "BAR_WEEKDAY": "Subota",
+  "BAR_LINE_1": "Od 19:00", "BAR_LINE_2": "Mjesto, Grad",
+  "CTA_TEXT": "Rezervirajte mjesto na", "CTA_BOLD": "www.medx.hr"
+}

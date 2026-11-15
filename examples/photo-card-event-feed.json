@@ -1,0 +1,10 @@
+{
+  "_comment": "Design 3, the same photo card used for an event. Text here is placeholder text.",
+  "PHOTO": "../assets/placeholders/photo-room.jpg",
+  "PHOTO_POSITION": "50% 50%",
+  "PILL": "Event series 2027",
+  "TITLE_LINE_1": "Event name", "TITLE_LINE_2": "Evening",
+  "SUB_LINE_1": "Venue, City",
+  "BAR_NUM": "5", "BAR_MONTH": "DEC", "BAR_DAYS": "Sat",
+  "BAR_LINE_1": "From 19:00", "BAR_LINE_2": "Dress code"
+}

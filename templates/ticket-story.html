@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="hr" data-size="1080x1920" data-serif="1" data-faces="900 100px Inter|700 36px Inter|600 104px Inter|500 42px Inter">
+<head>
+<meta charset="utf-8">
+<title>Med&amp;X ticket post, story 1080x1920</title>
+<!-- Design 2, the ticket post, story version: logo and ticket at the top, the photograph rises from the bottom edge. Source: the Gala "last seats" post of 14 Nov 2026 (round 3, slide 1).
+     A photograph across the top fades into cream. Under it, stacked from the bottom: a crimson ticket tilted 4 degrees
+     with a perforated stub, the event name in the serif, the dark date bar, and one call to action with the site. -->
+<link rel="stylesheet" href="../tokens.css">
+<style>
+  html, body { width: 1080px; height: 1920px; background: var(--cream); }
+  body { font-family: var(--sans); color: var(--ink); }
+  .frame { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--cream); }
+  .ph { position: absolute; overflow: hidden; }
+  .ph img { width: 100%; height: 100%; object-fit: cover; }
+  .pill { position: absolute; display: flex; align-items: center; background: rgba(250,246,238,.94); border-radius: 999px;
+          box-shadow: 0 6px 24px -10px rgba(25,21,18,.35); }
+  .stack { position: absolute; display: flex; flex-direction: column; align-items: flex-start; }
+  /* the ticket */
+  .tkwrap { filter: drop-shadow(0 18px 24px rgba(60,10,12,.30)); margin-left: -6px; }
+  .tk { background: var(--crimson); transform: rotate(-4deg); display: inline-flex; }
+  .tk .main { display: flex; flex-direction: column; justify-content: center; }
+  .tk .h6 { font-family: var(--sans); font-weight: 900; letter-spacing: -.05em; line-height: .84; color: var(--cream); }
+  .tk .stub { border-left: 3px dashed rgba(247,241,230,.6); display: flex; align-items: center; justify-content: center; }
+  .tk .stub span { font-family: var(--sans); font-weight: 700; color: var(--cream); letter-spacing: .04em; transform: rotate(-90deg); white-space: nowrap; }
+  /* event name */
+  .ev { font-family: var(--serif); font-weight: 500; font-variation-settings: var(--serif-axes); letter-spacing: -.015em; line-height: 1.04; white-space: nowrap; color: var(--ink); }
+  /* the date bar (dark card) */
+  .card { background: var(--bar-ticket); border-radius: 26px; color: var(--cream); display: flex; align-items: center; padding: 0 28px; gap: 20px; overflow: hidden; }
+  .card .d { font-family: var(--sans); font-weight: 600; font-size: 104px; font-variant-numeric: tabular-nums; letter-spacing: -.03em; line-height: 1; }
+  .card .m { font-weight: 600; font-size: 42px; color: var(--gold); letter-spacing: .04em; line-height: 1.12; white-space: nowrap; }
+  .card .w { font-weight: 500; font-size: 42px; line-height: 1.15; white-space: nowrap; }
+  .card .bar { align-self: stretch; margin: 28px 0; width: 3px; background: var(--gold); opacity: .9; flex: none; }
+  .card .r { font-weight: 500; font-size: 42px; line-height: 1.28; white-space: nowrap; }
+  .cta { font-family: var(--sans); font-weight: 500; font-size: 48px; color: var(--ink); line-height: 1.25; white-space: nowrap; letter-spacing: -.005em; }
+  .cta b { font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="frame">
+  <div class="ph" style="left: 0; top: 1200px; width: 1080px; height: 720px; -webkit-mask-image: linear-gradient(0deg, #000 0, #000 80%, transparent 100%); mask-image: linear-gradient(0deg, #000 0, #000 80%, transparent 100%)">
+    <img src="{{PHOTO}}" alt="" style="object-position: {{PHOTO_POSITION|50% 50%}}; transform: scale({{PHOTO_ZOOM|1}}); transform-origin: {{PHOTO_POSITION|50% 50%}}">
+  </div>
+  <img class="abs" src="../assets/logo/medx-logo-ink.png" style="left: 64px; top: 262px; height: 48px; width: 218px" alt="med&amp;x">
+  <div class="stack" style="left: 64px; top: 376px">
+    <div class="tkwrap" style="margin-bottom: 46px">
+      <div class="tk" style="height: 350px; -webkit-mask: radial-gradient(circle at 0 50%, transparent 32px, #000 33px) left / 51% 100% no-repeat, radial-gradient(circle at 100% 50%, transparent 32px, #000 33px) right / 51% 100% no-repeat">
+        <div class="main" style="padding: 0 59px 0 68px">
+          <div class="h6 fg" data-t data-w="660" data-h="261"><span class="fit">{{TICKET_LINE_1}}</span><span class="fit">{{TICKET_LINE_2|}}</span></div>
+        </div>
+        <div class="stub" style="width: 136px"><span style="font-size: 36px">{{STUB_TEXT}}</span></div>
+      </div>
+    </div>
+    <div class="ev fg" data-t data-w="952" data-max="112" style="margin-bottom: 26px"><span class="fit">{{TITLE}}</span></div>
+    <div class="card" data-t data-box style="margin-bottom: 28px; width: 952px; height: 178px">
+      <div class="d">{{BAR_DAY}}</div>
+      <div><div class="m">{{BAR_MONTH}}</div><div class="w">{{BAR_WEEKDAY}}</div></div>
+      <div class="bar"></div>
+      <div class="r"><div>{{BAR_LINE_1}}</div><div class="l">{{BAR_LINE_2|}}</div></div>
+    </div>
+    <div class="cta" data-t>{{CTA_TEXT}} <b>{{CTA_BOLD|www.medx.hr}}</b></div>
+  </div>
+</div>
+<script src="medx-check.js"></script>
+</body>
+</html>

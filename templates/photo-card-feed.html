@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" data-size="1080x1350" data-serif="1" data-faces="700 80px Inter|600 34px Inter|500 42px Inter">
+<head>
+<meta charset="utf-8">
+<title>Med&amp;X photo card, feed 1080x1350</title>
+<!-- Design 3, the photo card (keynote speaker and event announcements). Source: the Plexus Week 2026 announcements
+     of 24 Oct 2026 (v3 Instagram, slide 1 of each speaker and of the Gala). Cream page, photograph on top fading into
+     the cream, red pill, large serif name, role and institution, dark rounded date bar, med&x logo pill top left. -->
+<link rel="stylesheet" href="../tokens.css">
+<style>
+  html, body { width: 1080px; height: 1350px; background: var(--cream); }
+  body { font-family: var(--sans); color: var(--ink); }
+  .cv { position: relative; width: 1080px; height: 1350px; overflow: hidden; background: var(--cream); }
+  .ph { position: absolute; overflow: hidden; }
+  .ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .grade { position: absolute; inset: 0; background: var(--g, var(--cream)); mix-blend-mode: multiply; }
+  .band { position: absolute; left: 0; right: 0; }
+  .logo-cap { position: absolute; display: flex; align-items: center; padding: 16px 26px; border-radius: 999px; background: var(--cream);
+              box-shadow: 0 0 0 1px rgba(25,21,18,.1), 0 2px 4px rgba(25,21,18,.08), 0 8px 22px rgba(25,21,18,.16); }
+  /* red pill: "Keynote speaker", "Plexus Week 2026" */
+  .cap { display: inline-flex; align-items: center; gap: 12px; border-radius: 999px; font: 600 34px/1 var(--sans); letter-spacing: .005em;
+         white-space: nowrap; background: var(--crimson); color: #fff; padding: 18px 32px; }
+  .d { font-family: var(--serif); font-weight: 500; font-variation-settings: var(--serif-axes); letter-spacing: -.02em; line-height: 1.02; color: var(--ink); }
+  .sub { font: 500 42px/1.25 var(--sans); color: var(--soft); white-space: nowrap; }
+  /* the date bar */
+  .dc { position: absolute; left: 64px; top: 1166px; width: 952px; height: 128px; border-radius: 20px; background: var(--bar-card); overflow: hidden;
+        box-shadow: 0 1px 2px rgba(25,21,18,.08), 0 14px 32px rgba(25,21,18,.14); }
+  .lk { position: absolute; left: 40px; top: 0; bottom: 0; display: flex; align-items: center; gap: 24px; color: #fff; }
+  .lk .n { font: 700 80px/.9 var(--sans); letter-spacing: -.035em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .lk .m { display: flex; flex-direction: column; gap: 8px; font: 600 36px/1 var(--sans); white-space: nowrap; }
+  .lk .m b { font-weight: 700; letter-spacing: .08em; color: var(--gold); }
+  .lk .bar { width: 3px; align-self: stretch; margin: 4px; border-radius: 2px; background: var(--gold); }
+  .lk .v { display: flex; flex-direction: column; gap: 6px; font: 500 38px/1.15 var(--sans); white-space: nowrap; }
+  .lk .v b { font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="cv">
+  <!-- photo: 760 px tall, fully opaque to 560 px, then fades to the cream by 760 px. A multiply grade warms it,
+       and a half-strength desaturation band softens the last 120 px where it meets the text. -->
+  <div class="ph" style="left: 0; top: 0; width: 1080px; height: 760px; --g: {{GRADE|#f7f1e6}}; -webkit-mask-image: linear-gradient(180deg, #000 0px, rgba(0,0,0,1) 560px, rgba(0,0,0,0.9) 600px, rgba(0,0,0,0.65) 640px, rgba(0,0,0,0.35) 680px, rgba(0,0,0,0.1) 720px, rgba(0,0,0,0) 760px); mask-image: linear-gradient(180deg, #000 0px, rgba(0,0,0,1) 560px, rgba(0,0,0,0.9) 600px, rgba(0,0,0,0.65) 640px, rgba(0,0,0,0.35) 680px, rgba(0,0,0,0.1) 720px, rgba(0,0,0,0) 760px)">
+    <img src="{{PHOTO}}" alt="" style="object-position: {{PHOTO_POSITION|50% 30%}}; transform: scale({{PHOTO_ZOOM|1}}); transform-origin: {{PHOTO_POSITION|50% 30%}}">
+    <div class="grade"></div>
+    <div class="band" style="top: 640px; height: 120px; background: #808080; mix-blend-mode: saturation; opacity: 0.5; -webkit-mask-image: linear-gradient(180deg, transparent, #000 50%); mask-image: linear-gradient(180deg, transparent, #000 50%)"></div>
+  </div>
+  <div class="logo-cap" style="left: 56px; top: 56px"><img src="../assets/logo/medx-logo-ink.png" style="height: 36px" alt="med&amp;x"></div>
+  <div class="abs" style="left: 64px; right: 64px; bottom: 228px">
+    <div class="cap" data-t>{{PILL}}</div>
+    <div class="d fg" data-t data-w="952" data-max="130" style="font-size: 130px; margin-top: 28px"><span class="fit">{{TITLE_LINE_1}}</span><span class="fit">{{TITLE_LINE_2|}}</span></div>
+    <div class="sub" data-t style="margin-top: 24px"><div>{{SUB_LINE_1}}</div><div class="l">{{SUB_LINE_2|}}</div></div>
+  </div>
+  <div class="dc" data-box>
+    <div class="lk" data-t>
+      <div class="n">{{BAR_NUM}}</div>
+      <div class="m"><b>{{BAR_MONTH}}</b><span>{{BAR_DAYS}}</span></div>
+      <div class="bar"></div>
+      <div class="v"><b>{{BAR_LINE_1}}</b><span>{{BAR_LINE_2|}}</span></div>
+    </div>
+  </div>
+</div>
+<script src="medx-check.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="hr" data-size="1080x1920" data-faces="800 300px 'Open Sans'|700 64px 'Open Sans'|500 48px 'Open Sans'">
+<head>
+<meta charset="utf-8">
+<title>Med&amp;X big-number post, story 1080x1920</title>
+<!-- Design 1, the big-number post, story version (Instagram keeps the top 250 px and bottom 340 px for its own buttons). Source: the HLK points post of 15 Nov 2026 (version 4), Open Sans only.
+     Two large figures with their unit and label, a two-line headline, a date line and the site, set in cream
+     on a full-bleed photograph darkened on the left. A crimson rule runs down the left edge. -->
+<link rel="stylesheet" href="../tokens.css">
+<style>
+  html, body { width: 1080px; height: 1920px; }
+  body { position: relative; background: var(--ink); color: var(--cream); font-family: var(--open); font-kerning: normal; }
+  .t { position: absolute; white-space: nowrap; line-height: 1; }
+  .n { font-variant-numeric: tabular-nums lining-nums; }
+  .photo { left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+  .shade { left: 0; top: 0; width: 1080px; height: 1920px; }
+  /* the two figures */
+  .fig { font-size: 300px; font-weight: 800; letter-spacing: 0.005em; }
+  .unit { font-size: 64px; font-weight: 700; letter-spacing: -0.025em; }
+  .lab { font-size: 48px; font-weight: 500; letter-spacing: -0.014em; }
+  /* headline, two lines, 74 px apart */
+  .head { line-height: 1.1212; letter-spacing: -0.02em; }
+  .head b { font-weight: 700; }
+  .head .rest { font-weight: 500; }
+  .date { font-weight: 500; letter-spacing: -0.012em; }
+  .date b { font-weight: 700; }
+</style>
+</head>
+<body>
+<img class="abs photo" src="{{PHOTO}}" alt="" style="object-position: {{PHOTO_POSITION|50% 50%}}; transform: scale({{PHOTO_ZOOM|1}}); transform-origin: {{PHOTO_POSITION|50% 50%}}">
+<!-- left shade: dark at the left edge, gone by 60 %, lighter near the top so the logo area keeps the photo -->
+<div class="abs shade" style="background: linear-gradient(90deg, rgba(var(--scrim),.66) 0, rgba(var(--scrim),.5) 28%, rgba(var(--scrim),.12) 50%, rgba(var(--scrim),0) 60%); -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,.25) 0, rgba(0,0,0,.4) 210px, #000 460px); mask-image: linear-gradient(180deg, rgba(0,0,0,.25) 0, rgba(0,0,0,.4) 210px, #000 460px)"></div>
+<!-- foot shade under the headline -->
+<div class="abs shade" style="background: linear-gradient(180deg, rgba(var(--scrim),0) 1028px, rgba(var(--scrim),.7) 1308px, rgba(var(--scrim),.72) 1580px, rgba(var(--scrim),.4) 100%)"></div>
+<!-- soft patches behind the second figure, keep it legible on a pale head or wall -->
+<div class="abs" style="left: -168px; top: 868px; width: 668px; height: 568px; background: radial-gradient(ellipse 50% 50% at 50% 50%, rgba(var(--scrim),.3) 0, rgba(var(--scrim),.22) 45%, rgba(var(--scrim),0) 100%)"></div>
+<div class="abs" style="left: 6px; top: 737px; width: 460px; height: 420px; background: radial-gradient(ellipse 50% 50% at 50% 50%, rgba(var(--scrim),.4) 0, rgba(var(--scrim),.3) 45%, rgba(var(--scrim),0) 100%)"></div>
+<!-- crimson rule -->
+<div class="abs" style="left: 44px; top: 412px; width: 8px; height: 977px; background: var(--crimson)"></div>
+<img class="abs" src="../assets/logo/medx-logo-on-dark.svg" style="left: 74px; top: 284px; height: 56px" alt="med&amp;x">
+
+<div class="t n fig" data-t style="left: {{FIGURE_1_X|73}}px; top: 360.2px">{{FIGURE_1}}</div>
+<div class="t unit" data-t style="left: 76px; top: 645.7px">{{FIGURE_1_UNIT}}</div>
+<div class="t lab" data-t style="left: 78px; top: 715.9px">{{FIGURE_1_LABEL}}</div>
+
+<div class="t n fig" data-t style="left: {{FIGURE_2_X|67}}px; top: 787.8px">{{FIGURE_2}}</div>
+<div class="t unit" data-t style="left: 76px; top: 1073.2px">{{FIGURE_2_UNIT}}</div>
+<div class="t lab" data-t style="left: 76px; top: 1143.4px">{{FIGURE_2_LABEL}}</div>
+
+<div class="t head fg" data-t data-w="940" data-max="66" style="left: 75px; top: 1252.6px; font-size: 66px">
+  <span class="fit"><b>{{HEADLINE_BOLD}}</b> <span class="rest">{{HEADLINE_REST|}}</span></span>
+  <span class="fit"><b>{{HEADLINE_LINE_2}}</b></span>
+</div>
+<div class="t date fg" data-t data-w="940" data-max="54" style="left: 79px; top: 1437.9px; font-size: 54px"><span class="fit">{{DATE_LINE}}</span></div>
+<div class="t date fg" data-t data-w="940" data-max="48" style="left: 80px; top: 1505.2px; font-size: 48px"><span class="fit">{{SITE_TEXT|Više na}} <b>{{SITE_BOLD|www.medx.hr}}</b></span></div>
+<script src="medx-check.js"></script>
+</body>
+</html>

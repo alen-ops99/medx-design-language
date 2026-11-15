@@ -1,0 +1,5 @@
+.DS_Store
+templates/.render-*.html
+*.tmp
+/out/
+/renders/

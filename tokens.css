@@ -1,0 +1,59 @@
+/* Med&X design language: shared tokens and faces.
+   Every value is copied from the approved source CSS of the three designs (see DESIGN.md, "Sources").
+   Paths are relative to this file, so keep the repo layout as it is. */
+
+/* Inter 4.1 (SIL OFL 1.1, fonts/inter/LICENSE.txt). Used by the ticket and the photo card. */
+@font-face { font-family: 'Inter'; src: url('fonts/inter/Inter-Medium.otf') format('opentype'); font-weight: 500; font-display: block; }
+@font-face { font-family: 'Inter'; src: url('fonts/inter/Inter-SemiBold.otf') format('opentype'); font-weight: 600; font-display: block; }
+@font-face { font-family: 'Inter'; src: url('fonts/inter/Inter-Bold.otf') format('opentype'); font-weight: 700; font-display: block; }
+@font-face { font-family: 'Inter'; src: url('fonts/inter/Inter-Black.otf') format('opentype'); font-weight: 900; font-display: block; }
+
+/* Open Sans (SIL OFL 1.1, fonts/open-sans/OFL.txt). Used by the big-number post. */
+@font-face { font-family: 'Open Sans'; src: url('fonts/open-sans/OpenSans-Regular.ttf') format('truetype'); font-weight: 400; font-display: block; }
+@font-face { font-family: 'Open Sans'; src: url('fonts/open-sans/OpenSans-Medium.ttf') format('truetype'); font-weight: 500; font-display: block; }
+@font-face { font-family: 'Open Sans'; src: url('fonts/open-sans/OpenSans-SemiBold.ttf') format('truetype'); font-weight: 600; font-display: block; }
+@font-face { font-family: 'Open Sans'; src: url('fonts/open-sans/OpenSans-Bold.ttf') format('truetype'); font-weight: 700; font-display: block; }
+@font-face { font-family: 'Open Sans'; src: url('fonts/open-sans/OpenSans-ExtraBold.ttf') format('truetype'); font-weight: 800; font-display: block; }
+
+/* The serif. The approved posts use Apple's New York Medium (opsz 64, wght 500). Its licence does not allow
+   redistribution, so this repo does not ship it. On a Mac it is read from the system folder. Everywhere else
+   Newsreader (SIL OFL 1.1, fonts/newsreader/OFL.txt) takes its place, the fallback the source CSS already named. */
+@font-face { font-family: 'MedX Serif NY'; src: url('file:///System/Library/Fonts/NewYork.ttf') format('truetype'); font-weight: 400 1000; font-display: block; }
+@font-face { font-family: 'MedX Serif Fallback'; src: url('fonts/newsreader/Newsreader-Variable.ttf') format('truetype'); font-weight: 200 800; font-display: block; }
+
+:root {
+  /* colour */
+  --ink: #191512;          /* text on cream, the darkest brown-black */
+  --cream: #f7f1e6;        /* page ground, light text on photos */
+  --card: #fdfaf3;         /* lighter card paper */
+  --crimson: #9b1b22;      /* the one accent: keynote pill, ticket, rule */
+  --gold: #c9a962;         /* month word and divider inside date bars */
+  --gold-dark: #6e5626;    /* gold on cream (night theme of the ticket) */
+  --soft: #4a4239;         /* role and affiliation lines */
+  --muted: #6d6459;        /* small captions */
+  --hair: rgba(25,21,18,.16);
+  --hair-soft: rgba(25,21,18,.1);
+  --bar-ticket: #221d19;   /* date bar under the ticket */
+  --bar-card: #2b211c;     /* date bar on the photo card */
+  --scrim: 20,16,13;       /* rgb of the dark photo overlays on the big-number post */
+  --grade-portrait: #eddcc2; /* warmer multiply grade for portraits */
+  --logo-crimson: #9e1b22; /* inside the logo X only */
+  --logo-amber: #f8b018;   /* inside the logo X only */
+
+  /* type */
+  --serif: 'MedX Serif NY', 'MedX Serif Fallback', Georgia, serif;
+  --sans: 'Inter', system-ui, sans-serif;
+  --open: 'Open Sans', system-ui, sans-serif;
+  --serif-axes: 'opsz' 64; /* New York display cut. Newsreader reads the same axis */
+}
+html.serif-fallback { --serif: 'MedX Serif Fallback', Georgia, serif; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { overflow: hidden; }
+body { -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision; font-synthesis: none; }
+.abs { position: absolute; }
+img { display: block; }
+.serif { font-family: var(--serif); font-weight: 500; font-variation-settings: var(--serif-axes); }
+.fit { white-space: nowrap; display: block; width: max-content; }
+.fg { width: max-content; }
+.l:empty { display: none; }

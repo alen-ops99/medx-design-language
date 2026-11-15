@@ -1,0 +1,11 @@
+{
+  "_comment": "Design 1, big-number post. Every key is listed in DESIGN.md. Text here is placeholder text.",
+  "PHOTO": "../assets/placeholders/photo-stage.jpg",
+  "PHOTO_POSITION": "50% 50%",
+  "FIGURE_1": "20", "FIGURE_1_UNIT": "bodova", "FIGURE_1_LABEL": "aktivni sudionici",
+  "FIGURE_2": "12", "FIGURE_2_UNIT": "bodova", "FIGURE_2_LABEL": "pasivni sudionici",
+  "HEADLINE_BOLD": "Naziv događaja", "HEADLINE_REST": "bodovan je od",
+  "HEADLINE_LINE_2": "Naziv institucije",
+  "DATE_LINE": "Grad, 1.–2. mjeseca 2027.",
+  "SITE_TEXT": "Više na", "SITE_BOLD": "www.medx.hr"
+}

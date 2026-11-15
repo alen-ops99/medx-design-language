@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" data-size="1080x1920" data-serif="1" data-faces="700 80px Inter|600 34px Inter|500 42px Inter">
+<head>
+<meta charset="utf-8">
+<title>Med&amp;X photo card, story 1080x1920</title>
+<!-- Design 3, the photo card, story version. Source: the Plexus Week 2026 speaker stories of 24 Oct 2026 (v3).
+     Text on top (pill, serif name, role, up to two fact rows with line icons), the dark date bar, then the photograph
+     in a large rounded tile with the med&x logo pill in its corner. -->
+<link rel="stylesheet" href="../tokens.css">
+<style>
+  html, body { width: 1080px; height: 1920px; background: var(--cream); }
+  body { font-family: var(--sans); color: var(--ink); }
+  .cv { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--cream); }
+  .grade { position: absolute; inset: 0; background: var(--g, var(--cream)); mix-blend-mode: multiply; }
+  .logo-cap { position: absolute; display: flex; align-items: center; padding: 16px 26px; border-radius: 999px; background: var(--cream);
+              box-shadow: 0 0 0 1px rgba(25,21,18,.1), 0 2px 4px rgba(25,21,18,.08), 0 8px 22px rgba(25,21,18,.16); }
+  .cap { display: inline-flex; align-items: center; gap: 12px; border-radius: 999px; font: 600 34px/1 var(--sans); letter-spacing: .005em;
+         white-space: nowrap; background: var(--crimson); color: #fff; padding: 18px 32px; }
+  .d { font-family: var(--serif); font-weight: 500; font-variation-settings: var(--serif-axes); letter-spacing: -.02em; line-height: 1.02; color: var(--ink); }
+  .sub { font: 500 42px/1.25 var(--sans); color: var(--soft); white-space: nowrap; }
+  /* fact rows: hairlines above each row and under the last, a line icon, one line of text */
+  .rows { margin-top: 30px; border-bottom: 1px solid var(--hair-soft); }
+  .rows:not(:has(.rw span:not(:empty))) { display: none; }
+  .rw { display: flex; align-items: center; gap: 26px; padding: 16px 0; border-top: 1px solid var(--hair-soft); }
+  .rw:has(span:empty) { display: none; }
+  .rw svg { width: 40px; height: 40px; flex: none; color: var(--soft); }
+  .rw span { font: 500 38px/1.3 var(--sans); color: var(--ink); white-space: nowrap; }
+  .dc { position: absolute; left: 64px; top: 978px; width: 952px; height: 128px; border-radius: 20px; background: var(--bar-card); overflow: hidden;
+        box-shadow: 0 1px 2px rgba(25,21,18,.08), 0 14px 32px rgba(25,21,18,.14); }
+  .lk { position: absolute; left: 40px; top: 0; bottom: 0; display: flex; align-items: center; gap: 24px; color: #fff; }
+  .lk .n { font: 700 80px/.9 var(--sans); letter-spacing: -.035em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .lk .m { display: flex; flex-direction: column; gap: 8px; font: 600 36px/1 var(--sans); white-space: nowrap; }
+  .lk .m b { font-weight: 700; letter-spacing: .08em; color: var(--gold); }
+  .lk .bar { width: 3px; align-self: stretch; margin: 4px; border-radius: 2px; background: var(--gold); }
+  .lk .v { display: flex; flex-direction: column; gap: 6px; font: 500 38px/1.15 var(--sans); white-space: nowrap; }
+  .lk .v b { font-weight: 600; }
+  /* the photo tile */
+  .card2 { position: absolute; left: 64px; top: 1146px; width: 952px; height: 710px; border-radius: 28px; overflow: hidden;
+           box-shadow: 0 1px 2px rgba(25,21,18,.06), 0 18px 40px rgba(25,21,18,.12); }
+  .card2 img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+</style>
+</head>
+<body>
+<div class="cv">
+  <!-- the text block grows upward from 974 px above the bottom edge -->
+  <div class="abs" style="left: 64px; width: 952px; bottom: 974px">
+    <div style="width: 952px">
+      <div class="cap" data-t>{{PILL}}</div>
+      <div class="d fg" data-t data-w="952" data-max="130" style="font-size: 130px; margin-top: 26px"><span class="fit">{{TITLE_LINE_1}}</span><span class="fit">{{TITLE_LINE_2|}}</span></div>
+      <div class="sub" data-t style="margin-top: 20px"><div>{{SUB_LINE_1}}</div><div class="l">{{SUB_LINE_2|}}</div></div>
+    </div>
+    <div class="rows">
+      <div class="rw" data-t><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.3 2.4 3.5 5.2 3.5 8.5s-1.2 6.1-3.5 8.5c-2.3-2.4-3.5-5.2-3.5-8.5s1.2-6.1 3.5-8.5z"/></svg><span>{{ROW_1|}}</span></div>
+      <div class="rw" data-t><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>{{ROW_2|}}</span></div>
+    </div>
+  </div>
+  <div class="dc" data-box>
+    <div class="lk" data-t>
+      <div class="n">{{BAR_NUM}}</div>
+      <div class="m"><b>{{BAR_MONTH}}</b><span>{{BAR_DAYS}}</span></div>
+      <div class="bar"></div>
+      <div class="v"><b>{{BAR_LINE_1}}</b><span>{{BAR_LINE_2|}}</span></div>
+    </div>
+  </div>
+  <div class="card2" style="--g: {{GRADE|#f7f1e6}}">
+    <img src="{{PHOTO}}" alt="" style="object-position: {{PHOTO_POSITION|50% 30%}}; transform: scale({{PHOTO_ZOOM|1}}); transform-origin: {{PHOTO_POSITION|50% 30%}}">
+    <div class="grade"></div>
+  </div>
+  <div class="logo-cap" style="left: 88px; top: 1170px"><img src="../assets/logo/medx-logo-ink.png" style="height: 36px" alt="med&amp;x"></div>
+</div>
+<script src="medx-check.js"></script>
+</body>
+</html>
