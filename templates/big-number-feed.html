@@ -16,6 +16,7 @@
   .shade { left: 0; top: 0; width: 1080px; height: 1350px; }
   /* the two figures */
   .fig { font-size: 300px; font-weight: 800; letter-spacing: 0.005em; }
+  .fig2::first-letter { letter-spacing: 0; } /* as in the source: the second figure's first digit (a 1) sits 1.5 px tighter */
   .unit { font-size: 64px; font-weight: 700; letter-spacing: -0.025em; }
   .lab { font-size: 48px; font-weight: 500; letter-spacing: -0.014em; }
   /* headline, two lines, 74 px apart */
@@ -42,7 +43,7 @@
 <div class="t unit" data-t style="left: 76px; top: 420.7px">{{FIGURE_1_UNIT}}</div>
 <div class="t lab" data-t style="left: 78px; top: 490.9px">{{FIGURE_1_LABEL}}</div>
 
-<div class="t n fig" data-t style="left: {{FIGURE_2_X|67}}px; top: 552.8px">{{FIGURE_2}}</div>
+<div class="t n fig fig2" data-t style="left: {{FIGURE_2_X|67}}px; top: 552.8px">{{FIGURE_2}}</div>
 <div class="t unit" data-t style="left: 76px; top: 838.2px">{{FIGURE_2_UNIT}}</div>
 <div class="t lab" data-t style="left: 76px; top: 908.4px">{{FIGURE_2_LABEL}}</div>
 

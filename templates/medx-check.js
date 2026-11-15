@@ -55,13 +55,20 @@ window.__fit = () => {
     if (s > 1.2) notes.push('photo enlarged ' + s.toFixed(2) + 'x, it will look soft, use a larger file');
   }
   const [W, H] = (root.dataset.size || '0x0').split('x').map(Number); // the canvas, not the window
+  const snip = e => e.textContent.trim().replace(/\s+/g, ' ').slice(0, 40);
   for (const e of document.querySelectorAll('[data-t]')) {
+    const range = document.createRange(); range.selectNodeContents(e);
+    for (const r of [e.getBoundingClientRect(), range.getBoundingClientRect()]) {  // the box and the text inside it
+      if (!r.width && !r.height) continue;
+      if (r.left < -1 || r.top < -1 || r.right > W + 1 || r.bottom > H + 1) { errs.push('text off canvas: ' + snip(e)); break; }
+    }
+  }
+  if (H === 1920) for (const e of document.querySelectorAll('[data-t]')) {  // Instagram covers these bands on a story
     const r = e.getBoundingClientRect();
-    if (!r.width && !r.height) continue;
-    if (r.left < -1 || r.top < -1 || r.right > W + 1 || r.bottom > H + 1) errs.push('text off canvas: ' + e.textContent.trim().slice(0, 40));
+    if (r.height && (r.top < 250 || r.bottom > H - 340)) notes.push('in the story band Instagram covers: ' + snip(e));
   }
   for (const e of document.querySelectorAll('[data-box]')) {
-    if (e.scrollWidth > e.clientWidth + 1 || e.scrollHeight > e.clientHeight + 1) errs.push('text overflows its box: ' + e.textContent.trim().replace(/\s+/g, ' ').slice(0, 40));
+    if (e.scrollWidth > e.clientWidth + 1 || e.scrollHeight > e.clientHeight + 1) errs.push('text overflows its box: ' + snip(e));
   }
   if (/\{\{[A-Z0-9_]+(\|[^}]*)?\}\}/.test(document.body.innerHTML)) errs.push('a {{PLACEHOLDER}} was not filled');
 
