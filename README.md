@@ -14,7 +14,7 @@ Ovdje je vizualni jezik Med&X objava: boje, fontovi, razmaci i dijelovi triju od
 
 Kako ga koristiti s Claude Codeom:
 
-1. U Terminalu: `git clone <REPO_URL> ~/.claude/skills/medx-design`
+1. U Terminalu: `git clone https://github.com/alen-ops99/medx-design-language.git ~/.claude/skills/medx-design`
 2. Pokrenite novi Claude Code.
 3. Recite mu, na primjer: "Koristi medx-design i napravi Instagram objavu i story za [događaj], s ovom fotografijom: [putanja]."
 
@@ -34,7 +34,7 @@ What is inside:
 
 How to use it with Claude Code:
 
-1. In Terminal: `git clone <REPO_URL> ~/.claude/skills/medx-design`
+1. In Terminal: `git clone https://github.com/alen-ops99/medx-design-language.git ~/.claude/skills/medx-design`
 2. Start a new Claude Code session.
 3. Tell it, for example: "Use medx-design to make an Instagram post and story for [event], with this photo: [path]."
 
